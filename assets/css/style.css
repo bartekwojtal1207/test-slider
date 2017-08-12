@@ -1,0 +1,13 @@
+/*.next-btn{*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*background-color: #1e7e34;*/
+/*}*/
+.slick-item{
+    display: flex !important;
+    justify-content: center;
+}
+h3{
+    color: #17a2b8;
+    border: 1px solid palevioletred;
+}
