@@ -60,65 +60,15 @@ function getCurrentSlide() {
          slider.slick('goTo',localStorage.currentSlider);
     // console.log('movefirstslide funkcja');
     }
-    var a = $('a');
-    console.log(a);
 
-    // function test() {
+    function test() {
 
-
-    // console.log('before url' + before );
-
-    // if(localStorage.before ){
-    //     console.log('before url istnieje' + localStorage.before);
-    // }else{
-    //     console.log('before url nie istnieje !!!!');
-    //     localStorage.before = document.URL;
-    // }
-    //
-    // localStorage.current = document.URL;
-    //
-    // if(localStorage.before === localStorage.current){
-    //     console.log('teraz linki sa takie same');
-    // }else{
-    //     console.log('teraz linki nie sa takiem same !!!!');
-    //     localStorage.clear();
-    //
-    //     console.log('startujemy od zera')
-    // }
-
-
-    if(localStorage.zmiana) {
-        console.log('jest zmiana dwa ');
-        localStorage.zmiana = localStorage.zmiana + 1;
-
-    }else {
-        localStorage.setItem('zmiana',Number(1));
-        console.log('nie ma zmiany')
     }
 
-    a.each(function () {
-        console.log($(this));
-        a.on('click',function (e) {
-            localStorage.clear();
-            console.log('clik');
-
-        })
-    });
-
-
-    console.log(localStorage);
 
 
 
-
-    // }
-
-    // test();
-
-
-
-
-
+    test();
 
 
     slider.on('afterChange', function(event, slick, direction){
