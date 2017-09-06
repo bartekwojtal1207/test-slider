@@ -144,22 +144,23 @@ $(function() {
 //
 //
 //
-var nowa = 0 ;
+    localStorage.nowaWartosc = 0 ;
 
 function test(numberId, randomLiczba, gotowy, result,nowa) {
 
     var dziesiec = 10;
 
-    nowaWartosc = 0;
-       nowaWartosc =+ (randomLiczba + dziesiec);
+
+       localStorage.nowaWartosc = localStorage.nowaWartosc +1;
     // localStorage.setItem('boxnr'+numberId, result);
     console.log(gotowy);
     localStorage.setItem(gotowy,nowaWartosc);
     console.log(localStorage.getItem(gotowy));
-    return result;
+    // return nowaWartosc;
 
 }
-
+console.log(localStorage);
+    // console.log(nowaWartosc+'nwoa wartosc');
 
 
 
@@ -176,19 +177,51 @@ function test(numberId, randomLiczba, gotowy, result,nowa) {
             console.log(localStorage);
             console.log($(this).data('id'));
             var numberId = $(this).data('id');
-            e.preventDefault();
-            var randomLiczba = Math.random();
+            // e.preventDefault();
+            var randomLiczba = 1;
             var gotowy  = 'boxnr'+ numberId;
 
             localStorage.setItem(gotowy, randomLiczba );
-
+                // console.log(nowaWartosc);
 
             test(numberId, randomLiczba, gotowy, result, nowa);
 
-
+          //  return nowaWartosc;
 
         })
 
    })
 
+
+
+
+
+//    okno kopiowania
+
+
+
+        test = "czemu hemp gru";
+
+
+    var copyTextarea = $('.copyInput');
+
+    var  inputZval = copyTextarea.val(test);
+
+
+    var copyTextareaBtn = $(".buttonSubmit");
+
+    copyTextareaBtn.on('click', function(event) {
+        copyTextarea.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copying text command was ' + msg);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
+    });
+   // button.on('click',function () {
+   //     copyText();
+   // })
 });
